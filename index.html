@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ 
+ 	<div id="output">
+ 	<form>
+ 		Enter mail id <input type="text" id="name" name="mailid">
+ 		<br>
+ 		Enter Password <input type"password" id="name" name="password">
+ 		<br>
+ 		<button onclick="fun()">Submit</button>
+ 		<script>
+ 			function fun(){
+ 				alert("function running");
+ 				let output=document.getElementById("output");
+ 				alert("function running2");
+ 				fetch("https://fake-json-api.mock.beeceptor.com/users")
+ 				.then(res => res.json())
+ 				.then(res =>{
+ 					alert("function running3");
+ 					output.innerHTML(JSON.stringify(res));
+ 					console.log(JSON.stringify(res));
+ 				})
+ 				.catch(err =>{
+ 					output.innerHTML(JSON.stringify(res)); 
+ 				})
+ 			}
+ 			
+ 		
+ 		</script>
+ 	</form>
+	</div>
+
+</body>
+</html>
